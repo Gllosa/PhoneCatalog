@@ -1,14 +1,99 @@
 [
 {
     "id": 0,
-    "name": "iPhone 7",
+    "name": "Iphone 7",
     "manufacturer": "Apple",
     "description": "lorem ipsum dolor sit amet consectetur.",
     "color": "black",
     "price": 769,
-    "imageFileName": "IPhone_7.png",
-    "screen": "4,7 inch IPS",
+    "imageFileName": "iphone_7.png",
+    "screen": "4.7 inch IPS",
     "processor": "A10 Fusion",
     "ram": 2
+    },
+{
+    "id": 1,
+    "name": "Samsung Galaxy S20",
+    "manufacturer": "Samsung",
+    "description": "lorem ipsum dolor sit amet consectetur.",
+    "color": "black",
+    "price": 609,
+    "imageFileName": "galaxy_s20.png",
+    "screen": "6.2 inch IPS",
+    "processor": "Exynos 990",
+    "ram": 12
+    },
+{
+    "id": 2,
+    "name": "iPhone X",
+    "manufacturer": "Apple",
+    "description": "lorem ipsum dolor sit amet consectetur.",
+    "color": "black",
+    "price": 473,
+    "imageFileName": "iphone_x.png",
+    "screen": "5.85 inch IPS",
+    "processor": "A11 bionic",
+    "ram": 2
+    },
+{
+    "id": 3,
+    "name": "One Plus 9",
+    "manufacturer": "One Plus",
+    "description": "lorem ipsum dolor sit amet consectetur.",
+    "color": "black",
+    "price": 599,
+    "imageFileName": "oneplus9.png",
+    "screen": "6.55 inch IPS",
+    "processor": "Octa-core",
+    "ram": 8
+    },
+{
+    "id": 4,
+    "name": "Xiaomi MI 11",
+    "manufacturer": "Xiaomi",
+    "description": "lorem ipsum dolor sit amet consectetur.",
+    "color": "black",
+    "price": 699,
+    "imageFileName": "xiaomi11.png",
+    "screen": "6.81 inch IPS",
+    "processor": "Kryo 680",
+    "ram": 6
+    },
+{
+    "id": 5,
+    "name": "Huawei P40 Pro",
+    "manufacturer": "Huawei",
+    "description": "lorem ipsum dolor sit amet consectetur.",
+    "color": "black",
+    "price": 699,
+    "imageFileName": "huaweip40.png",
+    "screen": "6.58 inch IPS",
+    "processor": "Cortex-A55",
+    "ram": 8
+    },
+{
+    "id": 6,
+    "name": "Find X2 Neo",
+    "manufacturer": "Oppo",
+    "description": "lorem ipsum dolor sit amet consectetur.",
+    "color": "black",
+    "price": 426,
+    "imageFileName": "oppo.png",
+    "screen": "6.5 inch IPS",
+    "processor": "Kryo 475 Silver",
+    "ram": 12
+    },
+{
+    "id": 7,
+    "name": "Zenfone 7 Pro",
+    "manufacturer": "ASUS",
+    "description": "lorem ipsum dolor sit amet consectetur.",
+    "color": "black",
+    "price": 799,
+    "imageFileName": "zenfone.png",
+    "screen": "6.67 inch IPS",
+    "processor": "Kryo 585",
+    "ram": 8
     }
+
 ]
