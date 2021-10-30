@@ -2,3 +2,10 @@ body {
   margin: 0 0;
   background-color: #EAF2F8;
 }
+
+@media only screen and (max-width: 674px) {
+
+    html, body{
+      margin: 0;
+    }
+}

@@ -2,17 +2,22 @@ import React from 'react';
 import '../styles/App.css';
 
 
+
 function PhonePopUp(props){
 
     return (
         <>
         {props.showModal ? (
-        <div className="phone-pop-up-container">
-            <div>
+        <div className="phone-pop-up-container" ref={props.ref}>
+            <div className="pop-up-image-container">
                 <img className="pop-up-img" src={props.img} alt={props.alt}></img>
             </div>
             <div className="specs-container">
-                <img className="close-btn" src={require('../images/close_icon.png').default} onClick={props.openModal}/>
+                <img className="close-btn" 
+                    src={require('../images/close_icon.png').default} 
+                    onClick={props.openModal}
+                    alt={props.alt}
+                    />
                 <h3>{props.name}</h3>
                 <p>{props.desc}</p>
                 <h4>Specifications</h4>
