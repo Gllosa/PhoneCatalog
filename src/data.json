@@ -15,7 +15,7 @@
     "id": 2,
     "name": "Samsung Galaxy S20",
     "manufacturer": "Samsung",
-    "description": "The Samsung Galaxy S20 is a series of Android-based smartphones designed, developed, marketed, and manufactured by Samsung Electronics as part of its Galaxy S series. They collectively serve as the successor to the Galaxy S10 and were unveiled at Samsung's Galaxy Unpacked event on 11 February 2020.The S20 series consists of flagship Galaxy S20 and Galaxy S20+ models differentiated primarily by screen size, as well as a larger camera-focused model, the Galaxy S20 Ultra. Key upgrades over the previous model, in addition to improved specifications, include a display with a 120 Hz refresh rate.",
+    "description": "The Samsung Galaxy S20 is a series of Android-based smartphones designed, developed, marketed, and manufactured by Samsung Electronics as part of its Galaxy S series. They collectively serve as the successor to the Galaxy S10 and were unveiled at Samsung's Galaxy Unpacked event on 11 February 2020.The S20 series consists of flagship Galaxy S20 and Galaxy S20+ models differentiated primarily by screen size, as well as a larger camera-focused model, the Galaxy S20 Ultra. ",
     "color": "black",
     "price": 609,
     "imageFileName": "galaxy_s20.png",
