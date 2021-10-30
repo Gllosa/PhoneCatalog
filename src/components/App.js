@@ -1,4 +1,4 @@
-import react, {useState} from 'react'
+import {useState} from 'react'
 
 import '../styles/App.css';
 import Header from './Header';
@@ -11,6 +11,7 @@ function App() {
   const openModal = () => {
     setShowModal(prev => !prev);
   }
+  const [id, setId] = useState(null);
 
   let phones = ReadApi();
   return (
@@ -19,6 +20,7 @@ function App() {
       <ul className="list-container">
         { !phones ? "cargando..." : phones.map((phone) =>{
           return <PhonePreview
+                  setId={() => setId(phone.id)}
                   openModal={openModal} 
                   key={phone.id} 
                   name={phone.name} 
@@ -26,16 +28,20 @@ function App() {
                   />
           })}
       </ul>
+      <> {!id ? null : (
       <PhonePopUp
         openModal={openModal}
         showModal={showModal}
-        img={require('../images/iphone_7.png').default}
-        name="Iphone 7"
-        desc="El iPhone 7 es un teléfono inteligente de gama alta diseñado por Apple Inc., presentado el 16 de septiembre de 2016 junto con el iPhone SE como sucesor del iPhone 6s, durante el evento Keynote realizado en San Francisco (California, EE. UU.)."
-        screen="5.6 inches IPS"
-        processor="I8 super guay"
-        ram="8"
-      />
+        img = {require('../images/'+phones[id-1].imageFileName).default}
+        name={phones[id-1].name}
+        desc={phones[id-1].description}
+        screen={phones[id-1].screen}
+        processor={phones[id-1].processor}
+        ram={phones[id-1].ram}
+        price={phones[id-1].price}
+      />)
+      }
+      </>
     </div>
   );
 }

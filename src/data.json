@@ -1,9 +1,9 @@
 [
 {
-    "id": 0,
+    "id": 1,
     "name": "Iphone 7",
     "manufacturer": "Apple",
-    "description": "lorem ipsum dolor sit amet consectetur.",
+    "description": "The iPhone 7 and iPhone 7 Plus are smartphones designed, developed, and marketed by Apple Inc. They are the tenth generation of the iPhone. They were announced on September 7, 2016, at the Bill Graham Civic Auditorium in San Francisco by Apple CEO Tim Cook, and were released on September 16, 2016, succeeding the iPhone 6S and iPhone 6S Plus as the flagship devices in the iPhone series.",
     "color": "black",
     "price": 769,
     "imageFileName": "iphone_7.png",
@@ -12,10 +12,10 @@
     "ram": 2
     },
 {
-    "id": 1,
+    "id": 2,
     "name": "Samsung Galaxy S20",
     "manufacturer": "Samsung",
-    "description": "lorem ipsum dolor sit amet consectetur.",
+    "description": "The Samsung Galaxy S20 is a series of Android-based smartphones designed, developed, marketed, and manufactured by Samsung Electronics as part of its Galaxy S series. They collectively serve as the successor to the Galaxy S10 and were unveiled at Samsung's Galaxy Unpacked event on 11 February 2020.The S20 series consists of flagship Galaxy S20 and Galaxy S20+ models differentiated primarily by screen size, as well as a larger camera-focused model, the Galaxy S20 Ultra. Key upgrades over the previous model, in addition to improved specifications, include a display with a 120 Hz refresh rate.",
     "color": "black",
     "price": 609,
     "imageFileName": "galaxy_s20.png",
@@ -24,10 +24,10 @@
     "ram": 12
     },
 {
-    "id": 2,
-    "name": "iPhone X",
+    "id": 3,
+    "name": "Iphone X",
     "manufacturer": "Apple",
-    "description": "lorem ipsum dolor sit amet consectetur.",
+    "description": "'For more than a decade, our intention has been to create an iPhone that is all display. The iPhone X is the realization of that vision,' said Jony Ive, Apple's chief design officer. 'With the introduction of iPhone ten years ago, we revolutionized the mobile phone with Multi-Touch. iPhone X marks a new era for iPhone one in which the device disappears into the experience.'",
     "color": "black",
     "price": 473,
     "imageFileName": "iphone_x.png",
@@ -36,10 +36,10 @@
     "ram": 2
     },
 {
-    "id": 3,
+    "id": 4,
     "name": "One Plus 9",
     "manufacturer": "One Plus",
-    "description": "lorem ipsum dolor sit amet consectetur.",
+    "description": "The OnePlus 9 and 9 Pro are Android-based smartphones manufactured by OnePlus, unveiled on March 23, 2021. The phones feature upgraded cameras in partnership with Hasselblad.The OnePlus 9 and 9 Pro have similar designs to that of the previous generation OnePlus 8 and 8 Pro, with Gorilla Glass 5 on the front and back, and a 'hole punch' style camera the upper left-hand corner. The 9's screen is flat with a plastic frame, while the 9 Pro's screen is curved with an aluminum frame.",
     "color": "black",
     "price": 599,
     "imageFileName": "oneplus9.png",
@@ -48,10 +48,10 @@
     "ram": 8
     },
 {
-    "id": 4,
+    "id": 5,
     "name": "Xiaomi MI 11",
     "manufacturer": "Xiaomi",
-    "description": "lorem ipsum dolor sit amet consectetur.",
+    "description": "The Xiaomi Mi 11 is an Android-based high-end smartphone designed, developed, produced, and marketed by Xiaomi Inc. succeeding their Xiaomi Mi 10 series. The phone was launched globally on 8 February 2021.The design of the Xiaomi Mi 11 is similar to that of the Mi 10, maintaining the front camera design in the upper left corner. The Mi 11 uses Corning Gorilla Glass Victus on its display and Corning Gorilla Glass 5 on its back or vegan leather depending on the model. The front of the phone uses a hidden earpiece.",
     "color": "black",
     "price": 699,
     "imageFileName": "xiaomi11.png",
@@ -60,10 +60,10 @@
     "ram": 6
     },
 {
-    "id": 5,
+    "id": 6,
     "name": "Huawei P40 Pro",
     "manufacturer": "Huawei",
-    "description": "lorem ipsum dolor sit amet consectetur.",
+    "description": "Huawei P40 is a line of high-end Android-based smartphones manufactured by Huawei.Unveiled on 26 March 2020, they succeed the Huawei P30 in the company's P series line. The P40 and P40 Pro are constructed with anodized aluminum for the frame, while the back uses Gorilla Glass. The P40 Pro+ uses ceramic for both the frame and the back. The display is flat on the P40, and curved on all sides on the P40 Pro and P40 Pro+; Huawei calls this a Quad-Curve Overflow Display.",
     "color": "black",
     "price": 699,
     "imageFileName": "huaweip40.png",
@@ -72,10 +72,10 @@
     "ram": 8
     },
 {
-    "id": 6,
+    "id": 7,
     "name": "Find X2 Neo",
     "manufacturer": "Oppo",
-    "description": "lorem ipsum dolor sit amet consectetur.",
+    "description": "The Oppo Find X2 and Find X2 Pro are Android-based smartphones manufactured by Oppo, unveiled on 6 March 2020. The Find X2 and Find X2 Pro are constructed using an anodized aluminum frame and curved Gorilla Glass 6 on the front. The volume buttons are located on the left side opposite the power button, which has a green accent. Oppo offers two choices of material for the back panel on both phones: the Find X2 is available with either glass or ceramic, and the Find X2 Pro is available with either ceramic or artificial leather.",
     "color": "black",
     "price": 426,
     "imageFileName": "oppo.png",
@@ -84,10 +84,10 @@
     "ram": 12
     },
 {
-    "id": 7,
+    "id": 8,
     "name": "Zenfone 7 Pro",
     "manufacturer": "ASUS",
-    "description": "lorem ipsum dolor sit amet consectetur.",
+    "description": "The ZenFone 7 and ZenFone 7 Pro are Android-based smartphones manufactured, released and marketed by Asus.The phones were unveiled on 26 August 2020, and succeed the ZenFone 6.On 26 August 2020, Asus launched the ZenFone 7 series in a Mandarin online press conference from their Taiwan headquarters.The ZenFone 7 series consists of the ZenFone 7 and ZenFone 7 Pro, retaining the hallmark flip camera form factor of the ZenFone 6 with the addition of a 3x telephoto camera, Sony IMX686 main sensor, 8K video recording capabilities, improved actuation mechanism, and optical image stabilisation exclusive to the Pro model.",
     "color": "black",
     "price": 799,
     "imageFileName": "zenfone.png",
