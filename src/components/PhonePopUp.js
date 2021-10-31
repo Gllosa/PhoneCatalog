@@ -2,13 +2,12 @@ import React from 'react';
 import '../styles/App.css';
 
 
-
 function PhonePopUp(props){
 
     return (
         <>
         {props.showPopUp ? (
-        <div className="phone-pop-up-container" ref={props.ref}>
+        <div className="phone-pop-up-container">
             <div className="pop-up-image-container">
                 <img className="pop-up-img" src={props.img} alt={props.alt}></img>
             </div>

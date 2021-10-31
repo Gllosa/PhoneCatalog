@@ -5,7 +5,5 @@ body {
 
 @media only screen and (max-width: 674px) {
 
-    html, body{
-      margin: 0;
-    }
+    html, body{ margin: 0 }
 }

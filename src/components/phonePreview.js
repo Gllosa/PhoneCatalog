@@ -4,7 +4,8 @@ import '../styles/App.css';
 function PhonePreview(props){
     return (
         <li className="phone-preview-container">
-            <img id={props.id} 
+            <img 
+                id={props.id} 
                 src={props.img} 
                 alt={props.alt} 
                 onClick={() => {props.openModal(); props.setId(props.id)}}>

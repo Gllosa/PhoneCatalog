@@ -5,8 +5,8 @@ function ReadApi() {
     const [phones, setPhones] = useState()
     const fetchApi = async () => {
         const response = await fetch(url);
-        const responseJson = await response.json()
-        setPhones(responseJson)
+        const responseJson = await response.json();
+        setPhones(responseJson);
     }
     useEffect(() => {
         fetchApi()
