@@ -15,7 +15,7 @@ function PhonePopUp(props){
             <div className="specs-container">
                 <img className="close-btn" 
                     src={require('../images/close_icon.png').default} 
-                    onClick={props.openModal}
+                    onClick={props.openPopUp}
                     alt={props.alt}
                     />
                 <h3>{props.name}</h3>

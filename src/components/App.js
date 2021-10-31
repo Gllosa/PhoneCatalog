@@ -71,6 +71,7 @@ function App() {
       <> {!id ? null : (
       <div ref={popUpRef}>
         <PhonePopUp
+          openPopUp={openPopUp}
           showPopUp={showPopUp}
           img = {require('../images/'+phones[id-1].imageFileName).default}
           name={phones[id-1].name}
