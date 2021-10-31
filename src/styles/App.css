@@ -143,9 +143,9 @@
   .phone-pop-up-container{
     display: inline-block;
     width: 90%;
-    height: 520px;
+    height: 85%;
     left: 5%;
-    top: 20%;
+    top: 10%;
     overflow: hidden;
   }
 
@@ -156,17 +156,17 @@
   }
 
   .phone-pop-up-container h3{
-    font-size: 35px;
+    font-size: 3vh;
     padding-top: 10px;
     text-align: center;
   }
   .phone-pop-up-container h4{
-    font-size: 26px;
+    font-size: 2.5vh;
     padding-top: 1px;
     text-align: center;
   }
   .phone-pop-up-container p{
-    font-size: 1.2vh;
+    font-size: 1.7vh;
     margin-left: 20px;
     padding-bottom: 5px;
   }
@@ -176,7 +176,7 @@
   }
   .specs-container li{
     list-style: none;
-    font-size: 20px;
+    font-size: 2vh;
     color: #515154;
     padding-left: 0;
     padding-top: 8px;
@@ -185,7 +185,7 @@
   
   .specs-container li:before{
     padding-top: 2px;
-    height: 20px;
+    height: 30px;
   }
 
   .tech-specs h6{
