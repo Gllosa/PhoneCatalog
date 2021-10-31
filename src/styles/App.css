@@ -203,15 +203,15 @@
 
 @media screen and (max-width: 700px) {
 
-  .phone-pop-up-container h3{ font-size: 22px }
+  .phone-pop-up-container h3{ font-size: 4vh }
 
   .phone-pop-up-container h4{ font-size: 18px }
 
-  .phone-pop-up-container p{ font-size: 1.2vh }
+  .phone-pop-up-container p{ font-size: 1.6vh }
 
   .specs-container{ width: 100% }
 
-  .specs-container li{ font-size: 12px }
+  .specs-container li{ font-size: 1.6vh }
   
   .specs-container li:before{
     border-bottom: 1px solid black;
