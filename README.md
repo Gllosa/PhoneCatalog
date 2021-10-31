@@ -7,7 +7,7 @@ Phone Catalog is a web app that's displays a list of phones. When you click on a
 In order to run the web app follow these steps:
 1. Clone the repository
 2. Unzip the download directory
-3. Open the terminal and navigate to the project
+3. Open the terminal and navigate to the project (make sure to get to the phoneCatalog-main folder wich contains all the code)
 4. Execute `npm install`
 5. Execute the api: `cd src` -->  `node api.js`
 6. Execute the app: `npm start`
