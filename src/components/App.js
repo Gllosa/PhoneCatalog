@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function App() {
-  // Spinner classes
+  // Spinner css classes
   const classes = useStyles()
 
   // PopUp state
@@ -47,6 +47,14 @@ function App() {
       document.removeEventListener("mousedown", outsideClick)
     }
   }, [showPopUp])
+
+  useEffect(() =>{
+    if (showPopUp){
+      document.body.style.overflow = 'hidden';
+    }else{
+      document.body.style.overflow = 'auto';
+    }
+  });
 
   let phones = ReadApi();
 
