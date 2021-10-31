@@ -7,7 +7,7 @@ function PhonePopUp(props){
 
     return (
         <>
-        {props.showModal ? (
+        {props.showPopUp ? (
         <div className="phone-pop-up-container" ref={props.ref}>
             <div className="pop-up-image-container">
                 <img className="pop-up-img" src={props.img} alt={props.alt}></img>

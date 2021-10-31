@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core';
 
 import '../styles/App.css';
 
-
+// CSS for loading spinner
 const useStyles = makeStyles((theme) => ({
   backdrop: {
     zIndex: theme.zIndex.drawer + 1,
@@ -20,30 +20,36 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function App() {
+  // Spinner classes
   const classes = useStyles()
-  const [showModal, setShowModal] = useState(false);
-  const openModal = () => {
-    setShowModal(prev => !prev);
+
+  // PopUp state
+  const [showPopUp, setShowPopUp] = useState(false);
+  const openPopUp = () => {
+    setShowPopUp(showPopUp => !showPopUp);
   }
+
+  // Status for phoneId on popUp
   const [id, setId] = useState(null);
 
   //Close popUp when clicking outside
   let popUpRef = useRef()
   useEffect(() => {
-    const checkIfClickedOutside = e => {
-      if (showModal && popUpRef.current && !popUpRef.current.contains(e.target)) {
-        setShowModal(false)
+    const outsideClick = e => {
+      if (showPopUp && !popUpRef.current.contains(e.target)) {
+        setShowPopUp(false)
       }
     }
 
-    document.addEventListener("mousedown", checkIfClickedOutside)
+    document.addEventListener("mousedown", outsideClick)
 
     return () => {
-      document.removeEventListener("mousedown", checkIfClickedOutside)
+      document.removeEventListener("mousedown", outsideClick)
     }
-  }, [showModal])
+  }, [showPopUp])
 
   let phones = ReadApi();
+
   return (
     <div className="App">
       <Header name="Phone Catalog" img={require('../images/logoBlanco.png').default}></Header>
@@ -55,7 +61,7 @@ function App() {
         : phones.map((phone) =>{
           return <PhonePreview
                   setId={() => setId(phone.id)}
-                  openModal={openModal} 
+                  openModal={openPopUp} 
                   key={phone.id} 
                   name={phone.name} 
                   img={require('../images/' + phone.imageFileName).default}
@@ -65,8 +71,7 @@ function App() {
       <> {!id ? null : (
       <div ref={popUpRef}>
         <PhonePopUp
-          openModal={openModal}
-          showModal={showModal}
+          showPopUp={showPopUp}
           img = {require('../images/'+phones[id-1].imageFileName).default}
           name={phones[id-1].name}
           desc={phones[id-1].description}
@@ -76,10 +81,8 @@ function App() {
           price={phones[id-1].price}
           alt={phones[id-1].name.slice(0, -3)}
         />
-      </div>
-      )
-      }
-      </>
+      </div>)
+      }</>
     </div>
   );
 }

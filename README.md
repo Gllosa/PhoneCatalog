@@ -7,4 +7,3 @@ Phone Catalog is a web app that's displays a list of phones. When you click on a
 
 
 ## `Requirements`
-
