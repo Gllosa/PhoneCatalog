@@ -12,6 +12,8 @@ In order to run the web app follow these steps:
 5. Execute the api: `cd src` -->  `node api.js`
 6. Execute the app: `npm start` (in another terminal, having navigated to the main app directory)
 
+However, if you prefer it, you can directly access the non API version here: https://phonecatalog-react.netlify.app
+
 ## `Requirements`
 
 You need to have node installed in your machine. You can downlaod it from: https://nodejs.org/es/download/
