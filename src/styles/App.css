@@ -143,9 +143,9 @@
   .phone-pop-up-container{
     display: inline-block;
     width: 90%;
-    height: 85%;
+    height: 75%;
     left: 5%;
-    top: 10%;
+    top: 20%;
     overflow: hidden;
   }
 
@@ -185,7 +185,7 @@
   
   .specs-container li:before{
     padding-top: 2px;
-    height: 30px;
+    height: 23px;
   }
 
   .tech-specs h6{
