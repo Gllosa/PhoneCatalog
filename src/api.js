@@ -1,10 +1,10 @@
-var express = require('express')
-var cors = require('cors')
+import express from 'express';
+import cors from 'cors';
 
-var fs = require('fs');
+import readFile  from 'fs';
 
 var json;
-fs.readFile('./data.json', 'utf8', function (err, data) {
+readFile('./data.json', 'utf8', function (err, data) {
   if (err) throw err;
   json = JSON.parse(data);
 });

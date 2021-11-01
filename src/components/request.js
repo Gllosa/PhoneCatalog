@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function ReadApi() {
+export default function Request() {
     const url = "http://localhost:5000/phones"
     const [phones, setPhones] = useState()
     const fetchApi = async () => {
@@ -15,5 +15,3 @@ function ReadApi() {
     
     return phones;
 }
-
-export default ReadApi;
