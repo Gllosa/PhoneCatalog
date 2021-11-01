@@ -8,7 +8,7 @@ function PhonePreview(props){
                 id={props.id} 
                 src={props.img} 
                 alt={props.alt} 
-                onClick={() => {props.openModal(); props.setId()}}>
+                onClick={() => {props.openPopUp(); props.setId()}}>
             </img>
             <h3>{props.name}</h3>
         </li>

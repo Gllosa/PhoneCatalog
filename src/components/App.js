@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-import Request from './request';
+import HttpRequest from './request';
 
 import Header from './Header';
 import PhonePreview from './PhonePreview';
@@ -21,7 +21,7 @@ export default function App() {
   // Status for phoneId on popUp
   const [id, setId] = useState(null);
 
-  let phones = Request();
+  let phones = HttpRequest();
 
   return (
     <div className="App">
@@ -34,7 +34,7 @@ export default function App() {
         : phones.map((phone) =>{
           return <PhonePreview
                   setId={() => setId(phone.id)}
-                  openModal={openPopUp} 
+                  openPopUp={openPopUp} 
                   key={phone.id} 
                   name={phone.name} 
                   img={require('../images/' + phone.imageFileName).default}

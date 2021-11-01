@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Request() {
+export default function HttpRequest() {
     const url = "http://localhost:5000/phones"
     const [phones, setPhones] = useState()
     const fetchApi = async () => {
