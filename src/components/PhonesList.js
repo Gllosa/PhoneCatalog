@@ -10,6 +10,7 @@ export default function PhonesList(props){
             filteredPhones.push(phone)
         }
     })
+    
 
     return (
         (filteredPhones.length !== 0 ? 
