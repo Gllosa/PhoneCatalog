@@ -9,6 +9,7 @@ import PhonePopUp from './PhonePopUp';
 import { Backdrop, CircularProgress } from '@material-ui/core';
 
 import '../styles/App.css';
+import SearchBar from './searchBar';
 
 export default function App() {
 
@@ -21,17 +22,32 @@ export default function App() {
   // Status for phoneId on popUp
   const [id, setId] = useState(null);
 
+  const [filterText, setFilterText] = useState('')
+
   let phones = HttpRequest();
+  let filteredPhones = [];
+  if (phones){
+    phones.forEach((phone) => {
+      if (phone.name.toUpperCase().indexOf(filterText.toUpperCase()) !== -1){
+        filteredPhones.push(phone)
+      }
+    })
+  }else{
+    filteredPhones = phones;
+  }
 
   return (
     <div className="App">
       <Header name="Phone Catalog" img={require('../images/logoBlanco.png').default}></Header>
+      <div className="search">
+        <SearchBar setFilterText={setFilterText}/>
+      </div>
       <ul className="list-container">
         { !phones ?  (
         <Backdrop open>
           <CircularProgress color="inherit"/>
         </Backdrop>)
-        : phones.map((phone) =>{
+        : (filteredPhones.length !== 0 ? filteredPhones.map((phone) =>{
           return <PhonePreview
                   setId={() => setId(phone.id)}
                   openPopUp={openPopUp} 
@@ -39,7 +55,7 @@ export default function App() {
                   name={phone.name} 
                   img={require('../images/' + phone.imageFileName).default}
                   />
-          })}
+          }): <h2 className="no-results">No results for "{filterText}"</h2>)}
       </ul>
       <> {!id ? null : (
         <PhonePopUp

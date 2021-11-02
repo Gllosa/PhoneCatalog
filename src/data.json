@@ -94,6 +94,53 @@
     "screen": "6.67 inch IPS",
     "processor": "Kryo 585",
     "ram": 8
+    },
+{
+    "id": 9,
+    "name": "Pixel 4a",
+    "manufacturer": "Google",
+    "description": "The Pixel 4a and Pixel 4a (5G) are a pair of Android smartphones designed, developed, and marketed by Google as part of the Google Pixel product line. They collectively serve as mid-range variants of the Pixel 4 and Pixel 4 XL. The Pixel 4a was announced on August 3, 2020 via a press release, while the Pixel 4a (5G) was announced on September 30, 2020 at the 'Launch Night In' event.",
+    "color": "black",
+    "price": 654,
+    "imageFileName": "pixel4a.png",
+    "screen": "5.81 inch IPS",
+    "processor": "Kryo 470 Silver",
+    "ram": 6
+    },
+{
+    "id": 10,
+    "name": "Realme x50 Pro",
+    "manufacturer": "Realme",
+    "description": "The Realme X50 Pro 5G is a smartphone from the Chinese company Realme, released in February 2020. Realme X50 Pro 5G comes with 5G networks on all spectrums from all over the world. The phone can be used in 5G enabled countries and experience high speeds. The smartphone has a 6.44-inch full-HD+ Super AMOLED display with a refresh rate of 90Hz, protected by a Corning Gorilla Glass 5 on top.",
+    "color": "black",
+    "price": 447,
+    "imageFileName": "x50pro.png",
+    "screen": "6.44 inch IPS",
+    "processor": "Snapdragon 865",
+    "ram": 12
+    },
+{
+    "id": 11,
+    "name": "Xperia 5 II",
+    "manufacturer": "Sony",
+    "description": "The Sony Xperia 5 II is an Android smartphone marketed and manufactured by Sony Mobile. Part of Sony's flagship Xperia series, the phone was announced on September 17, 2020.The device is a less expensive and more compact variant of the Xperia 1 II. The phone was released worldwide in October 2020.The Xperia 5 II ships with support for 5G NR in Europe and Asia (making it Sony's second Xperia device to support this network).",
+    "color": "black",
+    "price": 699,
+    "imageFileName": "xperia5.png",
+    "screen": "6.1 inch IPS",
+    "processor": "Kryo 585",
+    "ram": 8
+    },
+{
+    "id": 12,
+    "name": "ROG Phone 5",
+    "manufacturer": "Asus",
+    "description": "ROG Phone 5 es una línea de teléfonos inteligentes gaming Android fabricados por Asus como la quinta generación de la serie de teléfonos inteligentes ROG posteriores de la tercera generación de ROG Phone 3 (y saltándose la cuarta generación, ya que el número 4 se considera como de mala suerte en algunos países asiáticos). Fue lanzado el 10 de marzo de 2021.",
+    "color": "black",
+    "price": 799,
+    "imageFileName": "rog5.png",
+    "screen": "6.78 inch IPS",
+    "processor": "Snapdragon 888",
+    "ram": 8
     }
-
 ]

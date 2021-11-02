@@ -137,6 +137,22 @@
   color: #515A5A;
 }
 
+.search-bar{
+  border-radius: 30px;
+  width: 200px;
+  height: 25px;
+  justify-self: center;
+  margin: auto;
+}
+.search{
+  padding-top: 20px;
+  display: flex;
+}
+.no-results{
+  color: #515A5A;
+}
+
+
 /* Responsive */
 
 @media screen and (max-width: 1235px){
