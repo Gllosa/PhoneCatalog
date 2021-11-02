@@ -3,13 +3,14 @@ import {useState} from 'react'
 import HttpRequest from './request';
 
 import Header from './Header';
-import PhonePreview from './PhonePreview';
 import PhonePopUp from './PhonePopUp';
+import SearchBar from './SearchBar';
+import PhonesList from './PhonesList';
 
 import { Backdrop, CircularProgress } from '@material-ui/core';
 
 import '../styles/App.css';
-import SearchBar from './searchBar';
+
 
 export default function App() {
 
@@ -25,16 +26,6 @@ export default function App() {
   const [filterText, setFilterText] = useState('')
 
   let phones = HttpRequest();
-  let filteredPhones = [];
-  if (phones){
-    phones.forEach((phone) => {
-      if (phone.name.toUpperCase().indexOf(filterText.toUpperCase()) !== -1){
-        filteredPhones.push(phone)
-      }
-    })
-  }else{
-    filteredPhones = phones;
-  }
 
   return (
     <div className="App">
@@ -44,18 +35,16 @@ export default function App() {
       </div>
       <ul className="list-container">
         { !phones ?  (
-        <Backdrop open>
-          <CircularProgress color="inherit"/>
-        </Backdrop>)
-        : (filteredPhones.length !== 0 ? filteredPhones.map((phone) =>{
-          return <PhonePreview
-                  setId={() => setId(phone.id)}
-                  openPopUp={openPopUp} 
-                  key={phone.id} 
-                  name={phone.name} 
-                  img={require('../images/' + phone.imageFileName).default}
-                  />
-          }): <h2 className="no-results">No results for "{filterText}"</h2>)}
+          <Backdrop open>
+            <CircularProgress color="inherit"/>
+          </Backdrop>): 
+          <PhonesList
+              phones = {phones}
+              filterText = {filterText}
+              setId = {setId}
+              openPopUp = {openPopUp}
+          />
+        }
       </ul>
       <> {!id ? null : (
         <PhonePopUp
