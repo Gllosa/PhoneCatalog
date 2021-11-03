@@ -1,8 +1,8 @@
 # Phone Catalog
 
 ## `Description`
-Phone Catalog is a web app that displays a list of phones. When you click on any of them you can see extra information (apart from the image and the phone name) including a description, some specs and the price. All this information is taken from a local REST API. While the API request is ongoing the web shows a spinner letting the user know that the web is actually working. Additionally, this app is responsive so that it can look good both in phones and computers.
-
+Phone Catalog is a web app that displays a list of phones. When you click on any of them you can see extra information (apart from the image and the phone name) including a description, some specs and the price. All this information is taken from a local REST API. While the API request is ongoing the web shows a spinner letting the user know that the web is actually working. Additionally, this app is responsive so that it can look good both in phones and computers. You can choose between ordering the phones both in ascending or descending alphabetical order. You can aswell search for a phone name in the search bar. 
+![phone-catalog-home](https://user-images.githubusercontent.com/78595379/140080615-441844d1-cea7-4bc3-8ec9-5a2cbe155036.PNG)
 ## `Run it`
 In order to run the web app follow these steps:
 1. Download the zip
@@ -17,3 +17,4 @@ However, if you prefer it, you can directly access the non API version here: htt
 ## `Requirements`
 
 You need to have node installed in your machine. You can downlaod it from: https://nodejs.org/es/download/
+
