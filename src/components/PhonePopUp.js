@@ -38,8 +38,8 @@ export default function PhonePopUp(props){
                 <img 
                     className="pop-up-img" 
                     src={require('../images/'+phone.imageFileName).default} 
-                    alt={phone.alt}>
-                </img>
+                    alt={phone.alt}
+                />
             </div>
             <div className="specs-container">
                 <img 
@@ -61,8 +61,8 @@ export default function PhonePopUp(props){
                     <span></span>
                 </div>
             </div>
-        </div>
-        ) : null}
+        </div>) : 
+        null}
         </>
     )
 }

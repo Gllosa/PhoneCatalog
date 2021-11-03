@@ -1,8 +1,21 @@
+import { useEffect } from 'react';
 import PhonePreview from './PhonePreview';
 
 
 export default function PhonesList(props){
-    const {phones, filterText, setId, openPopUp} = props;
+    const {phones, filterText, setId, openPopUp, alphabetic} = props;
+
+    useEffect(()=>{
+        if (phones){
+          if (alphabetic){
+            phones.sort((a, b) => b.name.localeCompare(a.name))
+        }
+        else{
+          phones.sort((a, b) => a.name.localeCompare(b.name))
+        }
+        }
+      }, [alphabetic, phones])
+    
 
     let filteredPhones = [];
     phones.forEach((phone) => {
@@ -10,11 +23,10 @@ export default function PhonesList(props){
             filteredPhones.push(phone)
         }
     })
-    
 
     return (
-        (filteredPhones.length !== 0 ? 
-        filteredPhones.map((phone) =>{
+        filteredPhones.length !== 0 ? 
+        (filteredPhones.map((phone) =>{
             return <PhonePreview
                     setId={() => setId(phone.id)}
                     openPopUp={openPopUp} 
@@ -22,6 +34,7 @@ export default function PhonesList(props){
                     name={phone.name} 
                     img={require('../images/' + phone.imageFileName).default}
                     />
-        }): <h2 className="no-results">No results for "{filterText}"</h2>)
+        })) : 
+        <h2 className="no-results">No results for "{filterText}"</h2>
     )
 }

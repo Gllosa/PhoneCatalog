@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import { useState } from 'react'
 
 import HttpRequest from './request';
 
@@ -6,11 +6,11 @@ import Header from './Header';
 import PhonePopUp from './PhonePopUp';
 import SearchBar from './SearchBar';
 import PhonesList from './PhonesList';
+import FilterOptions from './FilterOptions';
 
 import { Backdrop, CircularProgress } from '@material-ui/core';
 
 import '../styles/App.css';
-import FilterOptions from './FilterOptions';
 
 
 export default function App() {
@@ -24,31 +24,20 @@ export default function App() {
 
   const [filterText, setFilterText] = useState('')
 
-  const [alphabetic, setAlphabetic] = useState(null)
+  const [alphabetic, setAlphabetic] = useState(true)
 
   let phones = HttpRequest();
-
-  useEffect(()=>{
-    if (phones){
-      if (alphabetic){
-        phones.sort((a, b) => b.name.localeCompare(a.name))
-    }
-    else{
-      phones.sort((a, b) => a.name.localeCompare(b.name))
-    }
-    }
-  }, [alphabetic, phones])
-
+  
   return (
     <div className="App">
-      <Header name="Phone Catalog" img={require('../images/logoBlanco.png').default}></Header>
+      <Header name="Phone Catalog" img={require('../images/logoBlanco.png').default}/>
       <div className="search">
         <img 
           className='filter' 
           src={require('../images/filter.png').default}
           alt='filter icon' 
         /> 
-        <FilterOptions setAlfabetic={setAlphabetic}/>
+        <FilterOptions setAlfabetic={setAlphabetic} alphabetic={alphabetic}/>
         <SearchBar setFilterText={setFilterText}/>
       </div>
       <ul className="list-container">
@@ -61,7 +50,7 @@ export default function App() {
               filterText = {filterText}
               setId = {setId}
               openPopUp = {openPopUp}
-              alphabetically = {alphabetic}
+              alphabetic = {alphabetic}
           />
         }
       </ul>
@@ -71,8 +60,7 @@ export default function App() {
           showPopUp={showPopUp}
           setShowPopUp={setShowPopUp}
           phone={phones.find(phone => phone.id === id)}
-        />
-      )
+        />)
       }</>
     </div>
   );

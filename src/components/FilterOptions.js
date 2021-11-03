@@ -16,10 +16,10 @@ export default function FilterOptions(props){
                 <input 
                     type="radio" 
                     id='alphabetic' 
-                    name='options' 
+                    name='options'
                     onChange={setAlph}
-                >
-                </input>
+                    checked={props.alphabetic}
+                />
                 <label htmlFor='alphabetic'>Asc. order</label>
             </div>
             <div>
@@ -28,8 +28,8 @@ export default function FilterOptions(props){
                     id='non-alphabetic' 
                     name='options'
                     onChange={setNonAlph}
-                >
-                </input>
+                    checked={!props.alphabetic}
+                />
                 <label htmlFor='non-alphabetic'>Desc. order</label>
             </div>
         </div>
