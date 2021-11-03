@@ -5,17 +5,12 @@ import PhonePreview from './PhonePreview';
 export default function PhonesList(props){
     const {phones, filterText, setId, openPopUp, alphabetic} = props;
 
-    useEffect(()=>{
-        if (phones){
-          if (alphabetic){
-            phones.sort((a, b) => b.name.localeCompare(a.name))
-        }
-        else{
-          phones.sort((a, b) => a.name.localeCompare(b.name))
-        }
-        }
-      }, [alphabetic, phones])
-    
+    if (alphabetic){
+      phones.sort((a, b) => a.name.localeCompare(b.name))
+    }
+    else{
+      phones.sort((a, b) => b.name.localeCompare(a.name))
+    }
 
     let filteredPhones = [];
     phones.forEach((phone) => {
