@@ -8,7 +8,7 @@ export default function SearchBar(props){
       props.setFilterText(e.target.value)
     };
 
-    const cleanSearch = (e) => {
+    const cleanSearch = () => {
       props.setFilterText("")
       document.getElementById('input-search').value = ""
     }

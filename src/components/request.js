@@ -7,7 +7,6 @@ export default function HttpRequest() {
         const response = await fetch(url);
         
         const responseJson = await response.json();
-        responseJson.sort((a, b) => a.name.localeCompare(b.name))
         setPhones(responseJson);
     }
     useEffect(() => {

@@ -4,10 +4,10 @@ import '../styles/App.css';
 export default function FilterOptions(props){
 
     const setAlph = () =>{
-        props.setAlfabetic(true)
+        props.setAlphabetic(true)
     }
     const setNonAlph = () =>{
-        props.setAlfabetic(false)
+        props.setAlphabetic(false)
     }
 
     return (

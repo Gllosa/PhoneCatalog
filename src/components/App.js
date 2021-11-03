@@ -37,7 +37,7 @@ export default function App() {
           src={require('../images/filter.png').default}
           alt='filter icon' 
         /> 
-        <FilterOptions setAlfabetic={setAlphabetic} alphabetic={alphabetic}/>
+        <FilterOptions setAlphabetic={setAlphabetic} alphabetic={alphabetic}/>
         <SearchBar setFilterText={setFilterText}/>
       </div>
       <ul className="list-container">
