@@ -16,6 +16,7 @@ import './styles/App.css';
 export default function App() {
 
   const [showPopUp, setShowPopUp] = useState(false);
+
   const openPopUp = () => {
     setShowPopUp(showPopUp => !showPopUp);
   }
