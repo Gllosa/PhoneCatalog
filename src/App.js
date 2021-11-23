@@ -1,16 +1,16 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
-import HttpRequest from './request';
+import getPhones from './services/getPhones';
 
-import Header from './Header';
-import PhonePopUp from './PhonePopUp';
-import SearchBar from './SearchBar';
-import PhonesList from './PhonesList';
-import FilterOptions from './FilterOptions';
+import Header from './components/Header';
+import PhonePopUp from './components/PhonePopUp';
+import SearchBar from './components/SearchBar';
+import PhonesList from './components/PhonesList';
+import FilterOptions from './components/FilterOptions';
 
 import { Backdrop, CircularProgress } from '@material-ui/core';
 
-import '../styles/App.css';
+import './styles/App.css';
 
 
 export default function App() {
@@ -26,15 +26,20 @@ export default function App() {
 
   const [alphabetic, setAlphabetic] = useState(true)
 
-  let phones = HttpRequest();
+  const [phones, setPhones] = useState()
+
+  useEffect(() => {
+    getPhones().then((phones) => {setPhones(phones)})
+  }
+  , [])
   
   return (
     <div className="App">
-      <Header name="Phone Catalog" img={require('../images/logoBlanco.png').default}/>
+      <Header name="Phone Catalog" img={require('./images/logoBlanco.png').default}/>
       <div className="search">
         <img 
           className='filter' 
-          src={require('../images/filter.png').default}
+          src={require('./images/filter.png').default}
           alt='filter icon' 
         /> 
         <FilterOptions setAlphabetic={setAlphabetic} alphabetic={alphabetic}/>
