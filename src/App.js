@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 import getPhones from './services/getPhones';
 
@@ -8,6 +8,9 @@ import SearchBar from './components/SearchBar';
 import PhonesList from './components/PhonesList';
 import FilterOptions from './components/FilterOptions';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { setPhones } from './reducers/phonesReducer';
+
 import { Backdrop, CircularProgress } from '@material-ui/core';
 
 import './styles/App.css';
@@ -15,25 +18,15 @@ import './styles/App.css';
 
 export default function App() {
 
-  const [showPopUp, setShowPopUp] = useState(false);
+  const dispatch = useDispatch()
 
-  const openPopUp = () => {
-    setShowPopUp(showPopUp => !showPopUp);
-  }
-
-  const [id, setId] = useState(null);
-
-  const [filterText, setFilterText] = useState('')
-
-  const [alphabetic, setAlphabetic] = useState(true)
-
-  const [phones, setPhones] = useState()
-
-  useEffect(() => {
-    getPhones().then((phones) => {setPhones(phones)})
-  }
-  , [])
+  const phones = useSelector(state => state.phones)
   
+  useEffect(() => {
+    getPhones().then((phones) => dispatch(setPhones(phones)))
+  }
+  , [dispatch])
+
   return (
     <div className="App">
       <Header name="Phone Catalog" img={require('./images/logoBlanco.png').default}/>
@@ -43,31 +36,18 @@ export default function App() {
           src={require('./images/filter.png').default}
           alt='filter icon' 
         /> 
-        <FilterOptions setAlphabetic={setAlphabetic} alphabetic={alphabetic}/>
-        <SearchBar setFilterText={setFilterText}/>
+        <FilterOptions/>
+        <SearchBar/>
       </div>
       <ul className="list-container">
         { !phones ?  (
           <Backdrop open>
             <CircularProgress color="inherit"/>
           </Backdrop>): 
-          <PhonesList
-              phones = {phones}
-              filterText = {filterText}
-              setId = {setId}
-              openPopUp = {openPopUp}
-              alphabetic = {alphabetic}
-          />
+          <PhonesList/>
         }
       </ul>
-      <> {!id ? null : (
-        <PhonePopUp
-          openPopUp={openPopUp}
-          showPopUp={showPopUp}
-          setShowPopUp={setShowPopUp}
-          phone={phones.find(phone => phone.id === id)}
-        />)
-      }</>
+    <PhonePopUp/>
     </div>
   );
 }

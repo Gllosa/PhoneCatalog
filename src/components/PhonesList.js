@@ -1,8 +1,11 @@
+import { useSelector } from 'react-redux';
 import PhonePreview from './PhonePreview';
 
+export default function PhonesList(){
 
-export default function PhonesList(props){
-    const {phones, filterText, setId, openPopUp, alphabetic} = props;
+    const phones = useSelector(state => state.phones)
+
+    const {alphabetic, filterText} = useSelector(state => state.filter)
 
     if (alphabetic){
       phones.sort((a, b) => a.name.localeCompare(b.name))
@@ -20,15 +23,7 @@ export default function PhonesList(props){
 
     return (
         filteredPhones.length !== 0 ? 
-        (filteredPhones.map((phone) =>{
-            return <PhonePreview
-                    setId={() => setId(phone.id)}
-                    openPopUp={openPopUp} 
-                    key={phone.id} 
-                    name={phone.name} 
-                    img={require('../images/' + phone.imageFileName).default}
-                    />
-        })) : 
+        filteredPhones.map((phone) => {return <PhonePreview phone = {phone}/>}) : 
         <h2 className="no-results">No results for "{filterText}"</h2>
     )
 }

@@ -1,15 +1,20 @@
 
+import { useDispatch } from 'react-redux';
+import { setFilterText } from '../reducers/filterReducer';
+
 import '../styles/App.css';
 
 
-export default function SearchBar(props){
+export default function SearchBar(){
 
-    const setFilterText = (e) =>{
-      props.setFilterText(e.target.value)
+    const dispatch = useDispatch()
+
+    const setText = (e) =>{
+      dispatch(setFilterText(e.target.value))
     };
 
     const cleanSearch = () => {
-      props.setFilterText("")
+      dispatch(setFilterText(""))
       document.getElementById('input-search').value = ""
     }
 
@@ -20,7 +25,7 @@ export default function SearchBar(props){
             className='search-bar'
             type="text"
             placeholder="Search..."
-            onChange={setFilterText}
+            onChange={setText}
           />
           <img 
             src={require('../images/close_icon.png').default} 

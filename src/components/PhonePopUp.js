@@ -1,26 +1,33 @@
 import {React, useEffect, useRef} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setShowModal, toggleModal } from '../reducers/modalReducer';
+
 import '../styles/App.css';
 
+export default function PhonePopUp(){
 
-export default function PhonePopUp(props){
+    const phones = useSelector(state => state.phones)
+    const id = useSelector(state => state.id)
+    const phone = phones.find((phone) => phone.id === id)
 
-    const {openPopUp, showPopUp, setShowPopUp, phone} = props;
-    
+    const showModal = useSelector(state => state.showModal)
+    const dispatch = useDispatch()
+
     // Avoid scrolling when opened
     useEffect(() =>{
-        if (showPopUp){
+        if (showModal){
             document.body.style.overflow = 'hidden';
         }else{
             document.body.style.overflow = 'auto';
         }
-    }, [showPopUp]);
+    }, [showModal]);
     
     //Close popUp when clicking outside
     let popUpRef = useRef()
     useEffect(() => {
-        const outsideClick = e => {
-            if (showPopUp && !popUpRef.current.contains(e.target)) {
-                setShowPopUp(false)
+        const outsideClick = (event) => {
+            if (showModal && !popUpRef.current.contains(event.target)) {
+                dispatch(setShowModal(false))
             }
         }
         document.addEventListener("mousedown", outsideClick)
@@ -28,11 +35,11 @@ export default function PhonePopUp(props){
         return () => {
             document.removeEventListener("mousedown", outsideClick)
         }
-    }, [showPopUp, setShowPopUp])
+    }, [showModal, dispatch])
     
     return (
         <>
-        {showPopUp ? (
+        {showModal ? (
         <div className="phone-pop-up-container" ref={popUpRef}>
             <div className="pop-up-image-container">
                 <img 
@@ -45,7 +52,7 @@ export default function PhonePopUp(props){
                 <img 
                     className="close-btn" 
                     src={require('../images/close_icon.png').default} 
-                    onClick={openPopUp}
+                    onClick={() => dispatch(toggleModal())}
                     alt={phone.alt}
                 />
                 <h3>{phone.name}</h3>

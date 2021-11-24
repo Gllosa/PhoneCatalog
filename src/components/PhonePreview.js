@@ -1,16 +1,23 @@
 import React from 'react';
 import '../styles/App.css';
+import {useDispatch} from 'react-redux'
+import {updateId} from '../reducers/idReducer'
+import { toggleModal } from '../reducers/modalReducer';
 
-function PhonePreview(props){
+function PhonePreview({phone}){
+
+    const {id, imageFileName, alt, name} = phone
+    const dispatch = useDispatch()
+
     return (
         <li className="phone-preview-container">
             <img 
-                id={props.id} 
-                src={props.img} 
-                alt={props.alt} 
-                onClick={() => {props.openPopUp(); props.setId()}}
+                id={id} 
+                src={require('../images/' + imageFileName).default}
+                alt={alt} 
+                onClick={() => {dispatch(toggleModal()); dispatch(updateId(id))}}
             />
-            <h3>{props.name}</h3>
+            <h3>{name}</h3>
         </li>
     )
 }
