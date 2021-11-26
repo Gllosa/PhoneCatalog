@@ -1,6 +1,6 @@
 import {React, useEffect, useRef, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { setShowModal, toggleModal } from '../reducers/modalReducer';
 import getPhone from '../services/getPhone'
 
@@ -44,17 +44,19 @@ export default function PhoneDetails(){
             <div className="pop-up-image-container">
                 <img 
                     className="pop-up-img" 
-                    src={require('../images/'+phone.imageFileName).default} 
+                    src={require('../images/' + phone.imageFileName).default} 
                     alt={phone.alt}
                 />
             </div>
             <div className="specs-container">
-                <img 
-                    className="close-btn" 
-                    src={require('../images/close_icon.png').default} 
-                    onClick={() => dispatch(toggleModal())}
-                    alt={phone.alt}
-                />
+                <Link to='/'>
+                    <img 
+                        className="close-btn" 
+                        src={require('../images/home.png').default} 
+                        onClick={() => dispatch(toggleModal())}
+                        alt={phone.alt}
+                    />
+                </Link>
                 <h3>{phone.name}</h3>
                 <p>{phone.description}</p>
                 <h4>Specifications</h4>

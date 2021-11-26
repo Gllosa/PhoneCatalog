@@ -189,9 +189,9 @@
   .phone-pop-up-container{
     display: inline-block;
     width: 90%;
-    height: 75%;
+    height: 80%;
     left: 5%;
-    top: 20%;
+    top: 10%;
     overflow: hidden;
   }
 
