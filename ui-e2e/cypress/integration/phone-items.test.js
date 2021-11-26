@@ -11,7 +11,6 @@ describe("Phone catalog tests", () => {
     });
 
     it("Should display 12 phones", () => {
-        //cy.wait('@getPhoneList')
         cy.get('.list-container li').should('have.length', 12)
         
     });

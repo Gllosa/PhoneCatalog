@@ -23,7 +23,7 @@ export default function PhonesList(){
 
     return (
         filteredPhones.length !== 0 ? 
-        filteredPhones.map((phone) => {return <PhonePreview phone = {phone}/>}) : 
+        filteredPhones.map((phone) => {return <PhonePreview phone = {phone} key={phone.id}/>}) : 
         <h2 className="no-results">No results for "{filterText}"</h2>
     )
 }

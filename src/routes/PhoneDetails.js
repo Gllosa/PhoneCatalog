@@ -1,26 +1,26 @@
-import {React, useEffect, useRef} from 'react';
+import {React, useEffect, useRef, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { setShowModal, toggleModal } from '../reducers/modalReducer';
+import getPhone from '../services/getPhone'
 
 import '../styles/App.css';
 
-export default function PhonePopUp(){
+export default function PhoneDetails(){
 
-    const phones = useSelector(state => state.phones)
-    const id = useSelector(state => state.id)
-    const phone = phones.find((phone) => phone.id === id)
-
-    const showModal = useSelector(state => state.showModal)
     const dispatch = useDispatch()
 
-    // Avoid scrolling when opened
-    useEffect(() =>{
-        if (showModal){
-            document.body.style.overflow = 'hidden';
-        }else{
-            document.body.style.overflow = 'auto';
-        }
-    }, [showModal]);
+    const {id} = useParams()
+
+    const [phone, setPhone] = useState(null)
+
+    useEffect(() => {
+        getPhone(id).then((phone) => setPhone(phone))
+      }
+      , [id, dispatch])
+
+
+    const showModal = useSelector(state => state.showModal)
     
     //Close popUp when clicking outside
     let popUpRef = useRef()
@@ -39,7 +39,7 @@ export default function PhonePopUp(){
     
     return (
         <>
-        {showModal ? (
+        {phone ?
         <div className="phone-pop-up-container" ref={popUpRef}>
             <div className="pop-up-image-container">
                 <img 
@@ -68,8 +68,8 @@ export default function PhonePopUp(){
                     <span></span>
                 </div>
             </div>
-        </div>) : 
-        null}
+        </div>
+        : <h1>No hay telefono</h1>}
         </>
     )
 }

@@ -8,6 +8,7 @@ import { idReducer } from './reducers/idReducer';
 import { phonesReducer } from './reducers/phonesReducer';
 import { filterReducer } from './reducers/filterReducer';
 import { modalReducer } from './reducers/modalReducer';
+import { BrowserRouter } from 'react-router-dom';
 
 
 const reducer = combineReducers({
@@ -16,11 +17,14 @@ const reducer = combineReducers({
   filter: filterReducer,
   showModal: modalReducer
 })
+
 const store = createStore(reducer)
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 )
