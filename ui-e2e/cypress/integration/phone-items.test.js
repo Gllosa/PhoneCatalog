@@ -1,12 +1,19 @@
 describe("Phone catalog tests", () => {
     beforeEach(() => {
-        cy.visit('http://localhost:3000')
+        // cy.intercept({
+        //     url: 'http://localhost:5000/phones',
+        //     method: 'get',
+        //   }, {
+        //     fixture: 'phoneList',
+        //     delay: 5000
+        //   }).as('getPhoneList');
+        cy.visit('/')
     });
 
     it("Should display 12 phones", () => {
-        // El tamaño depende de la api, no tiene mucho sentido este test.
-        // Deberia hacer una llamada a la api y comparar con el lenght de /phones
+        //cy.wait('@getPhoneList')
         cy.get('.list-container li').should('have.length', 12)
+        
     });
 
     it("Open phone details", () =>{

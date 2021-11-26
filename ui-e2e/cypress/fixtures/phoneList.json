@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Iphone 7",
+        "manufacturer": "Apple",
+        "description": "The iPhone 7 and iPhone 7 Plus are smartphones designed, developed, and marketed by Apple Inc. They are the tenth generation of the iPhone. They were announced on September 7, 2016, at the Bill Graham Civic Auditorium in San Francisco by Apple CEO Tim Cook, and were released on September 16, 2016, succeeding the iPhone 6S and iPhone 6S Plus as the flagship devices in the iPhone series.",
+        "color": "black",
+        "price": 769,
+        "imageFileName": "iphone_7.png",
+        "screen": "4.7 inch IPS",
+        "processor": "A10 Fusion",
+        "ram": 2
+    }
+]
