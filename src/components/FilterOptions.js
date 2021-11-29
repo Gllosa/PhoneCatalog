@@ -1,6 +1,6 @@
 import { Field, Form, Formik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { setAlphabetic } from '../reducers/filterReducer';
+import { setAlphabetic } from '../store/filter/actionCreators';
 
 import '../styles/App.css';
 
@@ -9,11 +9,12 @@ export default function FilterOptions(){
     const dispatch = useDispatch()
 
     const handleOnChange = (picked) =>{
+        console.log("cambio", picked)
         if (picked === 'alphabetic'){
-            dispatch(setAlphabetic(true))
+            dispatch(setAlphabetic(false))
             return
         }
-        dispatch(setAlphabetic(false))
+        dispatch(setAlphabetic(true))
     }
 
     return (

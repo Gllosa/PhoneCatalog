@@ -3,7 +3,7 @@ import PhonePreview from './PhonePreview';
 
 export default function PhonesList(){
 
-    const phones = useSelector(state => state.phones)
+    let phones = useSelector(state => state.phones)
 
     const {alphabetic, filterText} = useSelector(state => state.filter)
 
@@ -14,16 +14,11 @@ export default function PhonesList(){
       phones.sort((a, b) => b.name.localeCompare(a.name))
     }
 
-    let filteredPhones = [];
-    phones.forEach((phone) => {
-        if (phone.name.toUpperCase().indexOf(filterText.toUpperCase()) !== -1){
-            filteredPhones.push(phone)
-        }
-    })
+    phones = phones.filter((phone) => {return phone.name.toUpperCase().indexOf(filterText.toUpperCase()) !== -1})
 
     return (
-        filteredPhones.length !== 0 ? 
-        filteredPhones.map((phone) => {return <PhonePreview phone = {phone} key={phone.id}/>}) : 
+        phones.length !== 0 ? 
+        phones.map((phone) => {return <PhonePreview phone = {phone} key={phone.id}/>}) : 
         <h2 className="no-results">No results for "{filterText}"</h2>
     )
 }

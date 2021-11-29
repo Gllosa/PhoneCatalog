@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { setFilterText } from '../reducers/filterReducer';
+import { setFilterText } from '../store/filter/actionCreators';
 
 import '../styles/App.css';
 

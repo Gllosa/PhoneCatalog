@@ -8,7 +8,7 @@ import PhonesList from '../components/PhonesList';
 import FilterOptions from '../components/FilterOptions';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { setPhones } from '../reducers/phonesReducer';
+import { setPhones } from '../store/phones/actionCreators';
 
 import { Backdrop, CircularProgress } from '@material-ui/core';
 

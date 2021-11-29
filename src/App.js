@@ -9,12 +9,10 @@ import Home from './routes/Home'
 
 export default function App(){
   return (
-    <>
-      <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='phones/:id' element={<PhoneDetails/>}/>
-      </Routes>
-    </>
+    <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='phones/:id' element={<PhoneDetails/>}/>
+    </Routes>
   )
 }
 
