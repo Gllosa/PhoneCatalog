@@ -180,7 +180,7 @@
   padding-right: 4px;
 }
 
-.filter-options label{ color: #515154 }
+.filter-option, label{ color: #515154 }
 
 
 /* Responsive */
@@ -191,6 +191,7 @@
     width: 90%;
     height: 80%;
     left: 5%;
+    right: 5%;
     top: 10%;
     overflow: hidden;
   }

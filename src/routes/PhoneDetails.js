@@ -1,7 +1,6 @@
-import {React, useEffect, useRef, useState} from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import {React, useEffect, useState} from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import { setShowModal, toggleModal } from '../reducers/modalReducer';
 import getPhone from '../services/getPhone'
 
 import '../styles/App.css';
@@ -10,37 +9,19 @@ export default function PhoneDetails(){
 
     const dispatch = useDispatch()
 
-    const {id} = useParams()
+    const { id } = useParams()
 
     const [phone, setPhone] = useState(null)
 
     useEffect(() => {
         getPhone(id).then((phone) => setPhone(phone))
       }
-      , [id, dispatch])
-
-
-    const showModal = useSelector(state => state.showModal)
-    
-    //Close popUp when clicking outside
-    let popUpRef = useRef()
-    useEffect(() => {
-        const outsideClick = (event) => {
-            if (showModal && !popUpRef.current.contains(event.target)) {
-                dispatch(setShowModal(false))
-            }
-        }
-        document.addEventListener("mousedown", outsideClick)
-
-        return () => {
-            document.removeEventListener("mousedown", outsideClick)
-        }
-    }, [showModal, dispatch])
+      , [id, dispatch])    
     
     return (
         <>
         {phone ?
-        <div className="phone-pop-up-container" ref={popUpRef}>
+        <div className="phone-pop-up-container">
             <div className="pop-up-image-container">
                 <img 
                     className="pop-up-img" 
@@ -53,7 +34,6 @@ export default function PhoneDetails(){
                     <img 
                         className="close-btn" 
                         src={require('../images/home.png').default} 
-                        onClick={() => dispatch(toggleModal())}
                         alt={phone.alt}
                     />
                 </Link>
@@ -71,7 +51,7 @@ export default function PhoneDetails(){
                 </div>
             </div>
         </div>
-        : <h1>No hay telefono</h1>}
+        : <h1 className='no-results'>No phone found</h1>}
         </>
     )
 }

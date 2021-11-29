@@ -1,4 +1,3 @@
-
 import { useDispatch } from 'react-redux';
 import { setFilterText } from '../reducers/filterReducer';
 

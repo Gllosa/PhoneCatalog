@@ -5,7 +5,7 @@ const phones = require('./data.json')
 
 const getPhone = (id) =>{
   const phone = phones.find((phone) => phone.id === Number(id))
-  return phone ? Promise.resolve(phone) : {Error: "Phone not found"}
+  return phone ? Promise.resolve(phone) : null
 }
 
 const server = express()               
